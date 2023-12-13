@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <ul th:if="${not #lists.isEmpty(operators)}" th:each="operator : ${operators}">
+        <li>
+            <p>ID: ${operator.id}</p>
+            <p>Name: ${operator.name}</p>
+            <p>Address: ${operator.address}</p>
+            <p>Phone Number: ${operator.phoneNumber}</p>
+            <p>Contact Person: ${operator.contactPerson}</p>
+        </li>
+    </ul>
+    <div th:if="${#lists.isEmpty(operators)}">
+        <p>No operators found</p>
+    </div>
+</body>
+</html>
